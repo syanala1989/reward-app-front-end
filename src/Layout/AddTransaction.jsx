@@ -14,7 +14,7 @@ import dayjs from "dayjs";
 
 function AddTransaction(props) {
 
-    const [transaction, setTransaction] = useState({ customerId: '', productId: '', transactionCard: '', transactionDate: new Date() })
+    const [transaction, setTransaction] = useState({ customerId: '', productId: '', transactionCard: '', transactionDate: null })
     const [customerNames, setCustomerNames] = useState([]);
     const [productNames, setProductNames] = useState([]);
     const [allTransaction, setAllTransaction] = useState([]);
@@ -26,7 +26,7 @@ function AddTransaction(props) {
 
     const handleDateChange = (newValue) => {
         if (dateError == true) setDateError(false);
-        setTransaction({ ...transaction, transactionDate: newValue });
+        setTransaction({ ...transaction, transactionDate: newValue.format('MM/DD/YYYY') });
     };
 
     const resetError = () => {
@@ -62,7 +62,7 @@ function AddTransaction(props) {
     const addTransaction = () => {
 
         let error = false;
-
+        
         if (transaction.customerId == '') { setCustomerError(true); error = true; }
         if (transaction.productId == '') { setProductError(true); error = true; }
         if (transaction.transactionCard == '') { setCardError(true); error = true; }

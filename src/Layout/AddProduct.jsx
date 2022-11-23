@@ -22,8 +22,7 @@ function AddProduct(props) {
     const [dateError, setDateError] = useState(false);
 
     const handleDateChange = (newValue) => {
-        if (dateError == true) setDateError(false);
-        setProduct({ ...product, productExpiry: newValue });
+            setProduct({ ...product, productExpiry: newValue.format('MM/DD/YYYY') });
     };
 
     const handleFlashClose = (event, reason) => {
@@ -65,13 +64,12 @@ function AddProduct(props) {
         setReloadGrid(false);
 
         let error = false;
+
         if (product.productName == '') { setNameError(true); error = true }
         if (product.productProvider == '') { setProviderError(true); error = true }
         if (product.productAmount == '') { setAmountError(true); error = true }
         if (product.productExpiry == '' || product.productExpiry == null) { setDateError(true); error = true; }
-
         if (error) { return }
-
 
         ProductService.createProduct(product).then((response) => {
             setProductDetails([...productDetais, response.data]);

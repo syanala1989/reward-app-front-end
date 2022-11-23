@@ -4,23 +4,23 @@ import { REWARD_API_BASE_URL as REWARDAPIBASEURL } from '../../assets/AppConstan
 class ProductService {
     createProduct(product) {
         return axios
-        .post(REWARDAPIBASEURL + '/' + 'products', product);
+            .post(REWARDAPIBASEURL + '/' + 'products', product);
     }
 
     getAllProducts() {
         return axios
-        .get(REWARDAPIBASEURL + '/' + 'products')
-        .catch(error => {
-            console.log(error)
-        })
+            .get(REWARDAPIBASEURL + '/' + 'products')
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     getProductNameAndId() {
         return axios
-        .get(REWARDAPIBASEURL + '/' + 'productNames')
-        .catch(error => {
-            console.log(error)
-        })
+            .get(REWARDAPIBASEURL + '/' + 'productNames')
+            .catch(error => {
+                console.log(error)
+            })
     }
 }
 

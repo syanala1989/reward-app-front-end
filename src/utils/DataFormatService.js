@@ -1,4 +1,12 @@
 class DataFormatService {
+    formatDate(date) {
+        return [
+            date.$M + 1,
+            date.$D,
+            date.$y,
+        ].join('/');
+    }
+
     calulateCustomerRewardByTransaction(productPrice) {
         let customerReward = 0;
         let amountOver100 = 0;
