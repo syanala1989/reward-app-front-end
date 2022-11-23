@@ -1,4 +1,4 @@
-const DataFormatService =  require('../../../utils/DataFormatService.js');
+const DataFormatService =  require('../../utils/DataFormatService');
 import '@testing-library/jest-dom'
 
 //test 1
