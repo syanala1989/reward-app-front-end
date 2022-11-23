@@ -1,0 +1,12 @@
+.categoryContainer {
+    border-radius: 25px;
+    background: #446666;
+    cursor: pointer;
+}
+
+.imgContainer {
+    border-radius: 25px;
+    width: 80px;
+    height: 80px;
+}
+
